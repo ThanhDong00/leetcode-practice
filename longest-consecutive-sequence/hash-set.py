@@ -21,4 +21,6 @@ def longestConsecutive(nums):
     return max_length
 
 if __name__ == "__main__":
-print(longestConsecutive([1,2,4,5,5,6,8,9,10,11]))
+    print(longestConsecutive([1,2,4,5,5,6,8,9,10,11]))
+    print(longestConsecutive([]))
+    print(longestConsecutive([1,1,1,1,1]))
