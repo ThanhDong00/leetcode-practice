@@ -34,14 +34,22 @@ def threeSum(nums: list[int]) -> list[list[int]]:
   return result
 
 if __name__ == "__main__":
-  testcase = [
-    [-1, 0, 1, 2, -1, -4],
-    [0, 1, 1],
-    [0, 0, 0],
-    [-2, 0, 0, 2, 2]
-  ]
-
-  for nums in testcase:
-    print(f"Input: {nums}")
-    print(f"Output: {threeSum(nums)}")
-    print()
+  testcases = (
+    ([-1, 0, 1, 2, -1, -4], [[-1, -1, 2], [-1, 0, 1]]),
+    ([0, 1, 1], []),
+    ([0, 0, 0], [[0, 0, 0]]),
+    ([0, 0, 0, 0], [[0, 0, 0]]),
+    ([-2, 0, 1, 1, 2], [[-2, 0, 2], [-2, 1, 1]]),
+    ([-1, 0, 1], [[-1, 0, 1]]),
+    ([-1, 2, -1], [[-1, -1, 2]]),
+    ([1, 2, -2, -1], []),
+    ([], []),
+    ([1], []),
+    ([1, 2], []),
+    ([-1, -1, 2, 0, 1], [[-1, -1, 2], [-1, 0, 1]]),
+    ([-2, -2, 0, 1, 1, 2, 2], [[-2, 0, 2], [-2, 1, 1]]))
+  for i, (nums, expected) in enumerate(testcases):
+    result = threeSum(nums)
+    assert result == expected, f"Test case {i+1} failed: expected {expected}, got {result}"
+    print(f"Test case {i+1} passed: expected {expected}, got {result}")
+               
