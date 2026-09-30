@@ -2,8 +2,8 @@
 
 def threeSum(nums: list[int]) -> list[list[int]]:
   nums = sorted(nums)
-  result = []
-  n = len(nums)
+  result: list[list[int]] = []
+  n: int = len(nums)
 
   for i in range(n-2):
     if nums[i] > 0:
@@ -11,8 +11,9 @@ def threeSum(nums: list[int]) -> list[list[int]]:
     if (i > 0) and nums[i] == nums[i-1]:
       continue
 
-    left, right = i+1, n-1
-    target = -nums[i]
+    left: int = i+1
+    right: int = n-1
+    target: int = -nums[i]
 
     while left < right:
         current_sum = nums[left] + nums[right]
