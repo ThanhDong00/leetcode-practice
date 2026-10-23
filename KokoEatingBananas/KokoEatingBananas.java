@@ -1,4 +1,4 @@
-package KokoEatingBananas;
+// package KokoEatingBananas;
 
 import java.util.Arrays;
 
@@ -31,14 +31,15 @@ public class KokoEatingBananas {
                 left = mid + 1;
             }
         }
-        
+
         return result;
     }
 
     static void test(int[] piles, int h, int expected) {
         int result = minEatingSpeed(piles, h);
         if (result == expected) {
-            System.out.println("Test passed");
+            // System.out.println("Test passed");
+            IO.println("Test passed!!");
         } else {
             System.out.println("Test failed: expected " + expected + ", got " + result);
         }
