@@ -16,6 +16,14 @@ public class TreeNode {
     this.right = right;
   }
 
+  // Not implememt yet
+  public static TreeNode build(Integer[] vals) {
+    if (vals == null || vals.length == 0 || vals[0] == null) return null;
+
+    TreeNode root = new TreeNode(vals[0]);
+    return null;
+  }
+
   public static int height(TreeNode root) {
     if (root == null) return 0;
 
