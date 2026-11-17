@@ -10,15 +10,17 @@ public class MaxDepth {
   }
 
   public static void main(String[] args) {
-    TreeNode root = new TreeNode(
+    TreeNode root = TreeNode.build(new Integer[] {
       4,
-      new TreeNode(
-        2,
-        new TreeNode(1, new TreeNode(0), new TreeNode()),
-        new TreeNode(3)
-      ),
-      new TreeNode(7, new TreeNode(6), new TreeNode(9))
-    );
+      2,
+      7,
+      1,
+      null,
+      0,
+      3,
+      6,
+      9,
+    });
 
     TreeNode.printTree(root);
     IO.println(maxDepth(root));

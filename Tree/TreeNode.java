@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TreeNode {
 
   int val;
@@ -18,10 +21,34 @@ public class TreeNode {
 
   // Not implememt yet
   public static TreeNode build(Integer[] vals) {
-    if (vals == null || vals.length == 0 || vals[0] == null) return null;
+    if (vals == null || vals[0] == null || vals.length == 0) {
+      return null;
+    }
 
     TreeNode root = new TreeNode(vals[0]);
-    return null;
+
+    Queue<TreeNode> queue = new LinkedList<>();
+    queue.offer(root);
+
+    int i = 1;
+
+    while (!queue.isEmpty() && i < vals.length) {
+      TreeNode current = queue.poll();
+
+      if (i < vals.length && vals[i] != null) {
+        current.left = new TreeNode(vals[i]);
+        queue.offer(current.left);
+      }
+      i++;
+
+      if (i < vals.length && vals[i] != null) {
+        current.right = new TreeNode(vals[i]);
+        queue.offer(current.right);
+      }
+      i++;
+    }
+
+    return root;
   }
 
   public static int height(TreeNode root) {
