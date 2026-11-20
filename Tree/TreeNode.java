@@ -3,13 +3,13 @@ import java.util.Queue;
 
 public class TreeNode {
 
-  int val;
+  Integer val;
   TreeNode left;
   TreeNode right;
 
   TreeNode() {}
 
-  TreeNode(int val) {
+  TreeNode(Integer val) {
     this.val = val;
   }
 
